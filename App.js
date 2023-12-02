@@ -13,12 +13,16 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CreateAccount">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="CreateAccount" component={CreateAccount} />
-        <Stack.Screen name="EmailVal" component={EmailVal} />
-        <Stack.Screen name="PasswordVal" component={PasswordVal} />
-        <Stack.Screen name="Verify" component={Verify} />
+        <Stack.Screen name="EmailVal"
+          component={EmailVal}
+          options={{
+            title: 'Sign Up'
+          }} />
+        <Stack.Screen name="PasswordVal" component={PasswordVal} options={{ title: 'Sign Up' }} />
+        <Stack.Screen name="Verify" component={Verify} options={{ title: 'Sign Up' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -14,7 +14,7 @@ const Home = ({ navigation }) => {
         navigation.navigate('Verify')
     };
 
-    const emailVal = () => { 
+    const emailVal = () => {
         navigation.navigate('EmailVal')
     };
 
@@ -69,7 +69,7 @@ const Home = ({ navigation }) => {
             <View style={styles.innercontainer}>
                 <View style={{ height: 200 }}>
                     <Text style={styles.title}>Log In</Text>
-                    <Text style={{ color: 'gray' }}>Hi! Welcome</Text>
+                    <Text style={{ color: 'gray', textAlign: 'center' }}>Hi! Welcome</Text>
                 </View>
 
                 <View style={{ width: '100%', paddingLeft: 40, paddingRight: 40 }}>
@@ -138,6 +138,9 @@ const styles = StyleSheet.create({
     },
     title: {
         color: "#14304",
+        fontSize: 18,
+        fontWeight: "bold",
+        textAlign: 'center'
     },
     button: {
         backgroundColor: "#41C485",

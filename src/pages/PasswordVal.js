@@ -18,25 +18,33 @@ export default function PasswordVal() {
 
     return (
         <View style={style.container}>
-            <View style={style.topBar}>
-                <Text>Sign up</Text>
 
-            </View>
             <View style={style.centerArea}>
-                <Text>Create Password</Text>
+                <View style={{ marginBottom: 100 }}>
+                    <Text style={style.title}>Create Password</Text>
+                    <TextInput style={style.field} placeholder="Password"></TextInput>
+                </View>
 
-                <TextInput style={style.field} placeholder="Password"></TextInput>
-                {/* Show Password */}
-
-                <Progress.Bar progress={0.6} width={200} />
-
-
-                <TouchableOpacity onPress={Verify} style={style.button}>
-                    <Text>Sign Up</Text>
+                <TouchableOpacity style={{ display: 'flex', flexDirection: "row" }}>
+                    <View style={style.bolinha}></View>
+                    <Text style={{ paddingLeft: 6 }}>Show Password</Text>
                 </TouchableOpacity>
 
-                <Text>By signing up, you agree to our Terms of Service and Privacy Policy</Text>
+                <View>
+                    <View style={{ textAlign: 'center' }}>
+                        <Text style={{ width: '100%', textAlign: "right" }}>1 of 3</Text>
+                        <Progress.Bar progress={0.6} width={300} color ={"#41C485"}/>
+                    </View>
 
+                    <TouchableOpacity onPress={Verify} style={style.button}>
+                        <Text style={{color: 'white'}}>Sign Up</Text>
+                    </TouchableOpacity>
+
+                    <View style={{ width: 300 }}>
+                        <Text style={{ textAlign: 'center' }}>By signing up, you agree to our
+                         <b>Terms of Service</b> and <b>Privacy Policy</b></Text>
+                    </View>
+                </View>
             </View>
 
 
@@ -52,9 +60,8 @@ const style = StyleSheet.create({
     container: {
         backgroundColor: "#FFFFFF",
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        width: 375,
-        height: 850,
+        justifyContent: 'center',
+        height: '100%',
 
     }, button: {
         backgroundColor: "#41C485",
@@ -66,6 +73,26 @@ const style = StyleSheet.create({
         justifyContent: "center",
         marginTop: 20,
         marginBottom: 20,
+    },
+    bolinha: {
+        borderWidth: 1,
+        width: 20,
+        height: 20,
+        borderRadius: 10,
+        borderBlockColor: 'gray'
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginBottom: 10
+    },
+    field: {
+        fontSize: 14,
+        color: 'gray'
+    },
+    centerArea: {
+        height: '100%',
+        justifyContent: 'center'
     }
 
 });
